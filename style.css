@@ -6,7 +6,7 @@
     --c-gray950: hsl(0, 0%, 7%);
 
     --c-background: var(--c-yellow);
-
+    --c-text: var(--c-gray950);
     --fw-regular: 500;
     --fw-bold: 800;
 }
@@ -17,17 +17,23 @@
     src: url('assets/fonts/Figtree-VariableFont_wght.ttf');
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: var(--c-background);
     font-family: Figtree;
     font-weight: 500;
     font-size: 1rem;
+    color: var(--c-gray950);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100svh;
+    margin: 0; /* 0 margin prevents display of scroll bars @ 100vh*/
 }
 
 .card {
@@ -58,15 +64,20 @@ body {
     padding-inline: 1rem;
 }
 
-.card .card-content .card-title {
+.card .card-content .card-title,
+ .card .card-content a.card-title:visited{
     font-size: calc(22 / 16 * 1rem);
     font-weight: 800;
-}
+    color: var(--c-text);
 
-.card .card-content .card-title:hover {
-    color: var(--c-yellow);
+    &:hover {
+color: var(--c-yellow);
     cursor: pointer;
-    
+    }
+
+    &:visited {
+
+    }
 }
 
 
